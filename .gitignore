@@ -1,0 +1,7 @@
+.sites-checkout/
+.sites-checkout-*/
+.sites-runtime/
+node_modules/
+.openai/
+/data/
+

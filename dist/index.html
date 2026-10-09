@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f4eb" />
+  <title>안동 사과 시세</title>
+  <meta name="description" content="안동농협 농산물공판장 사과 시세를 보기 쉽게 확인합니다." />
+  <style>
+    :root{--ink:#1f3024;--muted:#667169;--paper:#f7f4eb;--card:#fffdf8;--red:#d94f35;--green:#346548;--line:#e6dfd0;--shadow:0 10px 28px rgba(41,55,35,.08)}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;letter-spacing:-.035em}
+    .wrap{max-width:760px;margin:auto;padding:22px 18px 40px}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:4px 0 23px}.brand{display:flex;gap:11px;align-items:center}.apple{font-size:31px;line-height:1}.eyebrow{font-size:13px;color:var(--green);font-weight:800}.title{font-size:29px;font-weight:850;line-height:1.15;margin-top:2px}.date-pill{background:#e9f0e8;color:#2d6041;font-size:13px;font-weight:800;padding:8px 10px;border-radius:999px;white-space:nowrap}
+    .notice{border:1px solid #ead9bd;background:#fff8ea;border-radius:15px;padding:13px 15px;font-size:14px;line-height:1.45;color:#5d4c33;margin-bottom:15px}.notice b{color:#3d3424}
+    .hero{background:linear-gradient(132deg,#2f6145,#183d2b);color:#fff;padding:22px;border-radius:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero:after{content:"";width:180px;height:180px;border:30px solid rgba(255,255,255,.07);border-radius:50%;position:absolute;right:-65px;top:-80px}.hero small{display:block;color:#dcebdc;font-size:14px;font-weight:700}.hero h2{margin:7px 0 2px;font-size:25px}.hero .count{font-size:17px;font-weight:700;color:#dcebdc}.hero .source{margin-top:18px;font-size:13px;color:#c7dacb}.hero .source a{color:#fff;font-weight:800}
+    .actions{display:flex;gap:9px;margin:14px 0 25px}.btn{appearance:none;border:0;border-radius:13px;padding:13px 15px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;font-size:15px}.primary{background:var(--red);color:#fff;box-shadow:0 6px 15px rgba(217,79,53,.2)}.secondary{background:#ece9df;color:#324236;flex:1;text-align:center}.btn:disabled{opacity:.65}
+    .section-title{font-size:20px;font-weight:850;margin:0 0 5px}.section-copy{font-size:14px;color:var(--muted);margin:0 0 13px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 2px 5px rgba(40,50,35,.02)}.card .variety{font-size:18px;font-weight:850}.card .grade{display:inline-block;margin-top:6px;padding:3px 7px;border-radius:6px;background:#f2eee4;color:#685e4e;font-size:12px;font-weight:800}.price{font-size:25px;font-weight:900;margin:14px 0 3px;letter-spacing:-.05em}.unit{font-size:13px;color:var(--muted);font-weight:600}.range{margin-top:10px;color:#56635a;font-size:12px}.range b{color:var(--ink)}
+    .detail{margin-top:25px;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}.detail-head{padding:16px 16px 12px;display:flex;align-items:center;justify-content:space-between}.detail h3{font-size:18px;margin:0}.legend{font-size:12px;color:var(--muted)}table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;padding:11px 16px;background:#f4f0e7;color:#637066;font-size:12px}td{padding:13px 16px;border-top:1px solid var(--line);font-weight:600}td:last-child{text-align:right;font-size:16px;font-weight:850}.foot{margin:22px 2px 0;color:#788079;font-size:12px;line-height:1.6}.status{font-size:13px;color:var(--muted);min-height:20px;margin:0 0 12px}.fresh{color:#267044;font-weight:800}.warn{color:#a85b28;font-weight:800}@media(max-width:420px){.wrap{padding:18px 14px 32px}.title{font-size:27px}.hero{padding:19px}.price{font-size:22px}.card{padding:14px}td,th{padding-left:13px;padding-right:13px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top"><div class="brand"><span class="apple" aria-hidden="true">🍎</span><div><div class="eyebrow">농가용 한눈 시세</div><div class="title">안동 사과 시세</div></div></div><div class="date-pill" id="datePill">확인일 9/17</div></header>
+    <div class="notice"><b>보는 법</b> · 아래 금액은 <b>20kg 한 상자 평균 경매가</b>입니다. 품종을 누르면 해당 품종만 펼쳐 볼 수 있어요.</div>
+    <section class="hero"><small>오늘 안동농협 공판장 반입량</small><h2 id="reportDate">2026년 9월 17일 시세표</h2><div class="count"><span id="todayBoxes">25,574</span> 상자 <span aria-hidden="true">·</span> 전일 <span id="yesterdayBoxes">32,229</span> 상자</div><div class="source">기준: <a id="officialLink" href="https://adnacf.co.kr/web/bbs/board.php?bo_table=price2025&page=1&sod=desc&sop=and&sst=wr_datetime&wr_id=544" target="_blank" rel="noopener">안동농협 농산물공판장 공식 시세표 ↗</a></div></section>
+    <div class="actions"><button class="btn primary" id="refreshBtn">↻ 최신 시세 확인</button><a class="btn secondary" href="https://adnacf.co.kr/web/bbs/board.php?bo_table=price2025&page=1&sod=desc&sop=and&sst=wr_datetime" target="_blank" rel="noopener">공식표 전체 보기 ↗</a></div>
+    <p class="status" id="status">마지막으로 확인된 공식 시세를 보여드리고 있습니다.</p>
+    <section><h2 class="section-title">주요 품종 평균가</h2><p class="section-copy">거래가 가장 많은 대표 등급 기준 · 단위 원 / 20kg</p><div class="grid" id="cards"></div></section>
+    <section class="detail"><div class="detail-head"><h3>품종별 자세히</h3><span class="legend">대표 등급 기준</span></div><table><thead><tr><th>품종</th><th>등급</th><th>거래 수량</th><th>평균가</th></tr></thead><tbody id="tableBody"></tbody></table></section>
+    <p class="foot">시세는 경매 결과에 따라 수시로 달라질 수 있습니다. 이 화면은 안동농협 농산물공판장이 공시한 일일 시세표를 보기 쉽게 정리한 것이며, 출하·판매 판단 전에는 반드시 공식 원문을 함께 확인해 주세요.</p>
+  </main>
+  <script>
+    const fallback={date:'2026년 9월 17일',today:'25,574',yesterday:'32,229',link:'https://adnacf.co.kr/web/bbs/board.php?bo_table=price2025&page=1&sod=desc&sop=and&sst=wr_datetime&wr_id=544',items:[
+      {name:'홍로',grade:'특4',qty:'1,791',low:55000,high:197000,avg:144498},{name:'아리수',grade:'특3',qty:'255',low:73300,high:305000,avg:249396},{name:'시나노골드',grade:'특4',qty:'1,051',low:30000,high:71300,avg:60929},{name:'양광',grade:'특4',qty:'91',low:79100,high:171000,avg:163737},{name:'홍옥',grade:'특7',qty:'86',low:43000,high:124500,avg:111472},{name:'루비에스',grade:'특',qty:'30',low:19300,high:20000,avg:19370}
+    ]};
+    const won=n=>new Intl.NumberFormat('ko-KR').format(n)+'원';
+    function render(data){
+      document.getElementById('reportDate').textContent=data.date+' 시세표';document.getElementById('datePill').textContent='확인일 '+data.date.replace('2026년 ','').replace('월 ','/').replace('일','');document.getElementById('todayBoxes').textContent=data.today;document.getElementById('yesterdayBoxes').textContent=data.yesterday;document.getElementById('officialLink').href=data.link;
+      document.getElementById('cards').innerHTML=data.items.slice(0,4).map(x=>`<article class="card"><div class="variety">${x.name}</div><span class="grade">${x.grade} · 20kg</span><div class="price">${won(x.avg)}</div><div class="unit">평균 경매가</div><div class="range">최저 <b>${won(x.low)}</b> · 최고 <b>${won(x.high)}</b></div></article>`).join('');
+      document.getElementById('tableBody').innerHTML=data.items.map(x=>`<tr><td>${x.name}</td><td>${x.grade}</td><td>${x.qty} 상자</td><td>${won(x.avg)}</td></tr>`).join('');
+    }
+    render(fallback);
+    async function loadLatest(){
+      try{const response=await fetch('data/latest.json',{cache:'no-store'});if(!response.ok)throw new Error();const data=await response.json();if(!data?.items?.length)throw new Error();render(data);document.getElementById('status').innerHTML='<span class="fresh">공식 시세 자동 갱신 데이터가 적용되었습니다.</span>';}catch(e){document.getElementById('status').textContent='마지막으로 확인된 공식 시세를 보여드리고 있습니다.';}
+    }
+    loadLatest();
+    // 공식 사이트가 별도 공개 API를 제공하지 않아, 최신 표를 읽어 올 수 있을 때만 화면을 갱신합니다. 실패 시 확인된 공시값을 유지합니다.
+    async function refresh(){
+      const button=document.getElementById('refreshBtn'),status=document.getElementById('status');button.disabled=true;button.textContent='확인 중…';status.textContent='안동농협 공식 시세표를 확인하고 있습니다.';
+      try{await loadLatest();window.open(document.getElementById('officialLink').href,'_blank','noopener');status.innerHTML='<span class="fresh">최신 저장 시세를 적용하고 공식 원문을 열었습니다.</span>';}catch(e){status.innerHTML='<span class="warn">자동 갱신이 잠시 안 됩니다.</span> 아래 공식표 전체 보기에서 최신 표를 확인해 주세요.'}finally{button.disabled=false;button.textContent='↻ 최신 시세 확인';}}
+    document.getElementById('refreshBtn').addEventListener('click',refresh);
+  </script>
+</body>
+</html>
