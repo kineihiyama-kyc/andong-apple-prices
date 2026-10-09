@@ -15,15 +15,21 @@ const date = plain.match(/(20\d{2})년\s*(\d{1,2})월\s*(\d{1,2})일/)?.slice(1)
 if (!date) throw new Error("시세표 날짜를 읽지 못했습니다.");
 const textDate = `${date[0]}년 ${date[1]}월 ${date[2]}일`;
 const boxes = [...plain.matchAll(/(?:금일|전일)\s*사과\s*:\s*([\d,]+)\s*상자/g)].map((match) => match[1]);
-const wanted = new Set(["홍로", "아리수", "시나노골드", "양광", "홍옥", "루비에스"]);
+const endOfAppleSection = new Set(["하우스감귤", "단감", "만풍", "신고", "신화", "화산", "양홍장", "엘버트", "황용골드", "황진", "추희", "BK시들리스", "거봉", "마스캇베리에이"]);
 const varieties = new Map();
 let variety = "";
+let inAppleSection = false;
 const clean = (value) => value.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 for (const row of page.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
   const cells = [...row[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((cell) => clean(cell[1])).filter(Boolean);
   if (!cells.length) continue;
-  if (cells.length === 7) { variety = wanted.has(cells[0]) ? cells.shift() : ""; }
-  if (!variety || cells.length < 6) continue;
+  if (cells.length === 7) {
+    const candidate = cells[0];
+    if ((endOfAppleSection.has(candidate) || candidate.includes("감귤")) && inAppleSection) break;
+    if (/^[가-힣A-Za-z]/.test(candidate) && candidate !== "품종명") { variety = cells.shift(); inAppleSection = true; }
+    else { variety = ""; }
+  }
+  if (!inAppleSection || !variety || cells.length < 6) continue;
   const [grade, weight, qty, high, low, avg] = cells;
   if (!/^\d+(?:\.\d+)?$/.test(weight) || !/[\d,]+/.test(avg)) continue;
   const number = (value) => Number(value.replace(/,/g, ""));
