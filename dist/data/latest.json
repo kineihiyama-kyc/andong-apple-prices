@@ -1,48 +1,56 @@
 {
-  "date": "2026년 10월 8일",
-  "today": "22,260",
-  "yesterday": "26,550",
-  "link": "https://adnacf.co.kr/web/bbs/board.php?bo_table=price2025&page=1&sod=desc&sop=and&sst=wr_datetime&wr_id=558",
+  "date": "2026년 10월 9일",
+  "today": "13,573",
+  "yesterday": "22,650",
+  "link": "https://adnacf.co.kr/web/bbs/board.php?bo_table=price2025&page=1&sod=desc&sop=and&sst=wr_datetime&wr_id=559",
   "items": [
     {
       "name": "시나노골드",
-      "grade": "특2",
+      "grade": "특3",
+      "qty": "45",
+      "low": 47000,
+      "high": 59100,
+      "avg": 54529
+    },
+    {
+      "name": "아리수",
+      "grade": "특3",
       "qty": "1",
-      "low": 58400,
-      "high": 58400,
-      "avg": 58400
+      "low": 38800,
+      "high": 38800,
+      "avg": 38800
     },
     {
       "name": "양광",
       "grade": "특3",
-      "qty": "38",
-      "low": 51500,
-      "high": 103000,
-      "avg": 87871
+      "qty": "8",
+      "low": 61200,
+      "high": 90200,
+      "avg": 73313
     },
     {
       "name": "홍로",
       "grade": "특3",
-      "qty": "21",
-      "low": 24000,
-      "high": 26500,
-      "avg": 24981
+      "qty": "8",
+      "low": 24900,
+      "high": 25100,
+      "avg": 24950
     },
     {
       "name": "홍옥",
       "grade": "특5",
-      "qty": "20",
-      "low": 69900,
-      "high": 98300,
-      "avg": 88780
+      "qty": "6",
+      "low": 46900,
+      "high": 66000,
+      "avg": 59017
     },
     {
       "name": "루비에스",
-      "grade": "없음",
-      "qty": "10",
-      "low": 23000,
-      "high": 54900,
-      "avg": 29380
+      "grade": "특",
+      "qty": "15",
+      "low": 36600,
+      "high": 36600,
+      "avg": 36600
     }
   ]
 }
